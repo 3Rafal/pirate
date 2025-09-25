@@ -33,6 +33,16 @@ jobs:
           source: "./*"
           target: "/root/apps/pirate/"
 
+      - name: Create .env
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_KEY }}
+          script: |
+            echo "ZAI_API_KEY=${{ secrets.ZAI_API_KEY }}" > /root/apps/pirate/.env
+            chmod 600 /root/apps/pirate/.env
+
       - name: Build and restart
         uses: appleboy/ssh-action@v0.1.6
         with:

@@ -66,7 +66,6 @@ class PirateChat {
         const message = this.userInput.value.trim();
         if (!message) return;
 
-        this.addMessage('user', message);
         this.userInput.value = '';
         this.disableInput();
 
@@ -87,6 +86,8 @@ class PirateChat {
 
             const translateData = await translateResponse.json();
             const translatedMessage = translateData.translated_message;
+
+            this.addMessage('user', translatedMessage);
 
             this.showStatus('Thinking...');
 
