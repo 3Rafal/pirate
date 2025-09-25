@@ -190,3 +190,13 @@ h1 {
 .chat-messages::-webkit-scrollbar-thumb:hover {
     background: #A0522D;
 }
+
+@media (max-width: 768px) {
+    .input-container {
+        flex-direction: column;
+    }
+
+    #send-button {
+        width: 100%;
+    }
+}
