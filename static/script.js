@@ -73,7 +73,7 @@ class PirateChat {
         try {
             this.showStatus('Translating...');
 
-            const translateResponse = await fetch('http://localhost:8000/translate', {
+            const translateResponse = await fetch('/translate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ class PirateChat {
 
             this.showStatus('Thinking...');
 
-            const pirateResponse = await fetch('http://localhost:8000/pirate-response', {
+            const pirateResponse = await fetch('/pirate-response', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
